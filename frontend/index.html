@@ -137,7 +137,7 @@
             if (cameraActive) return;
             try {
                 console.log('Requesting camera access...');
-                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
                 console.log('Camera access granted.');
                 video.srcObject = stream;
                 video.style.display = 'inline';
